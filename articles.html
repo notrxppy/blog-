@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <title>Articles - DB Recovery Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()"> Toggle Theme</button>
+    
+    <header class="header">
+        <h1>Database Recovery Techniques</h1>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="articles.html" class="active">Articles</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <article class="blog-post" id="backup">
+            <h2>Introduction to Database Recovery</h2>
+            <p>Database recovery refers to the process of restoring a database to a correct and consistent state after a failure occurs. 
+            In today's data-driven world, where organizations rely heavily on databases for critical operations, having robust recovery techniques is not optional - it's essential for business continuity.</p>
+        </article>
+
+        <article class="blog-post" id="replication">
+            <h2>Types of Database Failures</h2>
+            <p>
+                <b>Transaction Failures</b><br>
+                
+                 1. Logical errors in transaction execution<br><br>
+                
+                 2. Violation of system integrity constraints<br><br>
+                
+                 3. Deadlock situations<br><br>
+                
+                <b>System Crashes</b><br>
+                
+                 1. Operating system failures<br><br>
+                
+                 2. DBMS software failures<br><br>
+                
+                 3. Power outages<br><br>
+                
+                <b>Media Failures</b><br>
+                
+                 1. Disk head crashes<br><br>
+                
+                 2. Storage corruption<br><br>
+                
+                 3. Physical damage to storage devices<br><br>
+                
+                <b>Human Errors</b><br>
+                
+                 1. Accidental data deletion<br><br>
+                
+                 2. Incorrect data modifications<br><br>
+                
+                 3. Schema changes gone wrong<br><br></p>
+        </article>
+
+        <article class="blog-post" id="pitr">
+            <h2>Core Recovery Techniques</h2>
+            <p><b>1. Log-Based Recovery</b><br><br>
+                <b>How it works:</b><br><br>
+               
+               1. Maintains a sequential record of all database changes (write-ahead logging)<br><br>
+               
+               2. Contains both redo and undo information<br><br>
+               
+               3. Uses checkpoints to minimize recovery time<br><br>
+               
+               <b>Advantages:</b><br>
+               
+               1. Provides complete recovery capability<br><br>
+               
+               2. Supports both immediate and deferred update strategies<br><br>
+               
+               3. Ensures atomicity and durability<br><br>
+               
+               <b>2. Shadow Paging</b><br><br>
+               
+               <b>Key characteristics:</b><br><br>
+               
+               1. Maintains two page tables (current and shadow)<br><br>
+               
+               2. Updates occur on shadow pages<br><br>
+               
+               3. Atomic switch to shadow pages on commit<br><br>
+               
+               <b>When to use:</b><br><br>
+               
+               1. When minimal logging overhead is desired<br><br>
+               
+               2. For systems requiring simple recovery mechanisms<br><br>
+               
+               3. Checkpointing<br><br>
+               
+               <b>Implementation approaches:</b><br><br>
+               
+               <b>Fuzzy Checkpointing:</b> Allows transactions to continue during checkpoint<br><br>
+               
+               <b>Sharp Checkpointing:</b> Requires quiescent system state<br><br>
+               
+               <b>Benefits:</b><br><br>
+               
+               1. Reduces recovery time<br><br>
+               
+               2. Minimizes log replay requirements<br><br>
+               
+               3. Provides known good recovery points<br><br></p>
+        </article>
+    </div>
+
+    <footer>
+        <p> 2025 Database Recovery Blog. Created by pratham</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
